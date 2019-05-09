@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="热巴男人的博客">
 <meta property="og:description" content="IE就是和别人不一样检测浏览器插件由于IE并不支持Netscape格式的插件。所以在IE中检测插件的唯一方式就是使用专有的ActiveXObject。可以使用以下函数检测插件。 1234567891011//检查插件function hasIEPlugin(name)&amp;#123;    try&amp;#123;        new ActiveXObject(name);        return">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T04:18:59.455Z">
+<meta property="og:updated_time" content="2019-05-09T01:58:24.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IE不同寻常的地方">
 <meta name="twitter:description" content="IE就是和别人不一样检测浏览器插件由于IE并不支持Netscape格式的插件。所以在IE中检测插件的唯一方式就是使用专有的ActiveXObject。可以使用以下函数检测插件。 1234567891011//检查插件function hasIEPlugin(name)&amp;#123;    try&amp;#123;        new ActiveXObject(name);        return">
@@ -320,11 +320,11 @@
       
 
       
-        <h1 id="IE就是和别人不一样"><a href="#IE就是和别人不一样" class="headerlink" title="IE就是和别人不一样"></a>IE就是和别人不一样</h1><h2 id="检测浏览器插件"><a href="#检测浏览器插件" class="headerlink" title="检测浏览器插件"></a>检测浏览器插件</h2><p>由于IE并不支持<code>Netscape</code>格式的插件。所以在IE中检测插件的唯一方式就是使用专有的<code>ActiveXObject</code>。可以使用以下函数检测插件。</p>
+        <h2 id="IE就是和别人不一样"><a href="#IE就是和别人不一样" class="headerlink" title="IE就是和别人不一样"></a>IE就是和别人不一样</h2><h3 id="检测浏览器插件"><a href="#检测浏览器插件" class="headerlink" title="检测浏览器插件"></a>检测浏览器插件</h3><p>由于IE并不支持<code>Netscape</code>格式的插件。所以在IE中检测插件的唯一方式就是使用专有的<code>ActiveXObject</code>。可以使用以下函数检测插件。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检查插件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasIEPlugin</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">new</span> ActiveXObject(name);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;<span class="keyword">catch</span>(ex)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//检测flash插件</span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="能力检测"><a href="#能力检测" class="headerlink" title="能力检测"></a>能力检测</h2><p>在IE8及之前的版本<code>type of document.createElement</code>返回的是<code>object</code>而不是<code>function</code>。这里可以参考一个万能的能力检测。</p>
+<h3 id="能力检测"><a href="#能力检测" class="headerlink" title="能力检测"></a>能力检测</h3><p>在IE8及之前的版本<code>type of document.createElement</code>返回的是<code>object</code>而不是<code>function</code>。这里可以参考一个万能的能力检测。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//作者 Peter Michaux</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isHostMethod</span>(<span class="params">object,property</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> t=<span class="keyword">typeof</span> object[property];</span><br><span class="line">    <span class="keyword">return</span> t=<span class="string">'function'</span>||(!!(t=<span class="string">'object'</span>&amp;&amp;object[property]))||t=<span class="string">'unknown'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2><p>关于<code>document.getELementById()</code>方法，其他浏览器接受参数<code>ID</code>必须与页面中元素id严格匹配。但是以下代码在IE7及更早版本之外是可行的。</p>
+<h3 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h3><p>关于<code>document.getELementById()</code>方法，其他浏览器接受参数<code>ID</code>必须与页面中元素id严格匹配。但是以下代码在IE7及更早版本之外是可行的。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"mydiv"</span>)</span><br></pre></td></tr></table></figure>
 <p>IE8及更低版本不会区分ID的大小写，因此”myDiv”和”mydiv”会被当作相同的元素。IE7及较低版本还有一个怪癖<strong>name特性与给定ID匹配的表单元素也会被该方法返回</strong></p>
@@ -503,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IE就是和别人不一样"><span class="nav-number">1.</span> <span class="nav-text">IE就是和别人不一样</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检测浏览器插件"><span class="nav-number">1.1.</span> <span class="nav-text">检测浏览器插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能力检测"><span class="nav-number">1.2.</span> <span class="nav-text">能力检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找元素"><span class="nav-number">1.3.</span> <span class="nav-text">查找元素</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IE就是和别人不一样"><span class="nav-number">1.</span> <span class="nav-text">IE就是和别人不一样</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检测浏览器插件"><span class="nav-number">1.1.</span> <span class="nav-text">检测浏览器插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能力检测"><span class="nav-number">1.2.</span> <span class="nav-text">能力检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找元素"><span class="nav-number">1.3.</span> <span class="nav-text">查找元素</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -543,7 +543,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.5k字</span>
+  <span class="post-count">博客全站共4.7k字</span>
 </div>
 
 

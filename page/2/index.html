@@ -316,8 +316,15 @@
       
         
           
-          函数参数JS不关心函数有多少参数，参数通过类似Array传递，即可以通过arguments[0]来访问第一个参数
-1234567891011function doAdd()&#123;    if(arguments.length==1)    &#123;        // do somethi
+          函数thisthis的值取决于调用的模式。在JavaScript中共有4种调用模式
+
+方法调用模式
+函数调用模式
+构造器调用模式
+apply调用模式
+
+方法调用模式当一个函数保存为对象的一个属性时，我们称他为一个方法。当方法被调用时，this绑定到该对象
+函数调用模式以函数调用模式调用时this绑定
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -618,7 +625,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.5k字</span>
+  <span class="post-count">博客全站共4.7k字</span>
 </div>
 
 
